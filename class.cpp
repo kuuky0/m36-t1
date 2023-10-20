@@ -4,9 +4,9 @@ CircleWidget::CircleWidget(QWidget *parent) {
     setParent(parent);
     setToolTip("Стоп");
     setSizePolicy(QSizePolicy::Fixed,QSizePolicy::Fixed);
-    mGreenCircle = QPixmap("images\\green.png");
-    mRedCircle = QPixmap("images\\red.png");
-    mYellowCircle = QPixmap("images\\yellow.png");
+    mGreenCircle = QPixmap("..\\images\\green.png");
+    mRedCircle = QPixmap("..\\images\\red.png");
+    mYellowCircle = QPixmap("..\\images\\yellow.png");
     mCurrentCircle = mGreenCircle;
     setGeometry(mCurrentCircle.rect());
 }

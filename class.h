@@ -12,6 +12,7 @@
 #include <QPainter>
 #include <QTimer>
 #include <QPaintEvent>
+#include <QDir>
 
 class CircleWidget : public QWidget {
 Q_OBJECT

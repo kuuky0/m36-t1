@@ -4,9 +4,9 @@ CircleWidget::CircleWidget(QWidget *parent) {
     setParent(parent);
     setToolTip("Стоп");
     setSizePolicy(QSizePolicy::Fixed,QSizePolicy::Fixed);
-    mGreenCircle = QPixmap("..\\images\\green.png");
-    mRedCircle = QPixmap("..\\images\\red.png");
-    mYellowCircle = QPixmap("..\\images\\yellow.png");
+    mGreenCircle = QPixmap(QDir::toNativeSeparators(QApplication::applicationDirPath()) + "/GreenCircle.png");
+    mRedCircle = QPixmap(QDir::toNativeSeparators(QApplication::applicationDirPath()) + "/red.png");
+    mYellowCircle = QPixmap( QDir::toNativeSeparators(QApplication::applicationDirPath()) + "/yellow.png");
     mCurrentCircle = mGreenCircle;
     setGeometry(mCurrentCircle.rect());
 }
@@ -37,9 +37,9 @@ void CircleWidget::paintEvent(QPaintEvent *e) {
 
 void CircleWidget::setValue(int value)
 {
-    if (value <= 33)
+    if (value < 33)
         setGreen();
-    else if (value > 33 && value <= 66)
+    else if (value >= 33 && value <= 66)
         setYellow();
     else
         setRed();
